@@ -1,0 +1,27 @@
+
+
+               
+               <!-- <img src="https://img.squadhelp.com/story_images/visual_images/memiqo.png?class=show" style="width: 100%;"> -->
+
+
+     <div class ="container-view-three">
+        <div class="photos-view-three">
+            <div>
+                <div id='render-more'>
+                    <button (click)="onBackClick()">Atrás</button>
+                </div>   
+                @if(cambiarDeFoto=== false){
+                <img [src]="pokemonImage[0]" (click)="onPhotoClick(pokemonImage[0])" style="width: 24%;">
+                <img [src]="pokemonImage[1]" (click)="onPhotoClick(pokemonImage[1])" style="width: 24%;">
+                <img [src]="pokemonImage[2]" (click)="onPhotoClick(pokemonImage[2])" style="width: 24%;">
+                <img [src]="pokemonImage[3]" (click)="onPhotoClick(pokemonImage[3])" style="width: 24%;">
+                }@else if(cambiarDeFoto=== true) {
+                    <div class="foto-grande-container" style="margin-top: 20px; text-align: center;">
+                        <img (click)="defaultFoto()" [src]="fotoSeleccionada" style="width: 100%;">
+                    </div>
+                     }
+
+                
+            </div>
+        </div>
+    </div>

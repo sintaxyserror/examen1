@@ -1,0 +1,24 @@
+<div id="page">
+    @if(mostrarFotos=== false){
+    <section>
+        <div class="grid">
+            @for(pokemon of pokemons; track pokemon){
+            <app-pokemon [pokemonName]="pokemon.name" (click)="pokemonElegido(pokemon)"
+                [pokemonImageFront]="pokemon.image"></app-pokemon>
+
+            }
+        </div>
+
+    </section>
+
+    }@else if(mostrarFotos === true){
+    <div class="photos-view-three">        <app-photo [pokemonImage]="pokemonSeleccionado.fotos"
+            (backClicked)="onBackClick($event)"></app-photo>
+
+
+    </div>
+
+
+    }
+
+</div>

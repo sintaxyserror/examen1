@@ -1,0 +1,65 @@
+<!-- === COMPONENTE TEXT: MOSTRAR RESULTADOS DEL DICCIONARIO === -->
+
+<!-- === VISTA PRINCIPAL: BOTONES DE NAVEGACIÓN === -->
+<!-- Solo muestra los botones si el componente está activo (enviar === true) -->
+@if(enviar=== true) {
+<div id='render-more'>
+    <!-- Solo muestra los botones principales si no hay contenido específico (estado === false) -->
+    @if(estado === false){
+    <!-- Event Binding: (click) ejecuta métodos para mostrar diferentes tipos de contenido -->
+    <button (click)="mostrarDefinicion()">Significados</button>   <!-- Botón para mostrar definiciones -->
+    <button (click)="mostrarSinonimos()">Sinónimos</button>       <!-- Botón para mostrar sinónimos -->
+    <button (click)="mostrarAntonimos()">Antónimos</button>       <!-- Botón para mostrar antónimos -->
+    }
+</div>
+
+} 
+
+<!-- === VISTA DE DEFINICIONES === -->
+<!-- Se muestra cuando definicion === true -->
+@if(definicion === true){
+<div id='render-more'>
+    <!-- Loop @for: Itera sobre el array de palabras -->
+    @for(palabra of arrayPalabra; track palabra) {
+    <div class="word">
+        <!-- Interpolación: {{}} muestra el contenido de la variable -->
+        <p>{{palabra.definicion}}</p>  <!-- Muestra todas las definiciones unidas -->
+    </div>
+    }
+    <!-- Botones de navegación -->
+    <button (click)="ocultar()">Volver</button>              <!-- Volver a botones principales -->
+    <button (click)="enviarBoolean()">Nueva búsqueda</button> <!-- Volver al formulario -->
+</div>
+}<!-- === VISTA DE SINÓNIMOS === -->
+<!-- Se muestra cuando sinonimos === true -->
+@else if(sinonimos === true){
+<div id='render-more'>
+    <!-- Loop @for: Itera sobre el array de palabras -->
+    @for(palabra of arrayPalabra; track palabra) {
+    <div class="word">
+        <!-- .join('\n'): Une los sinónimos con salto de línea -->
+        <p>{{palabra.sinonimos.join('\n')}}</p>  <!-- Muestra todos los sinónimos -->
+    </div>
+    }
+    <!-- Botones de navegación -->
+    <button (click)="ocultar()">Volver</button>              <!-- Volver a botones principales -->
+    <button (click)="enviarBoolean()">Nueva búsqueda</button> <!-- Volver al formulario -->
+</div>
+}
+
+<!-- === VISTA DE ANTÓNIMOS === -->
+<!-- Se muestra cuando antonimos === true -->
+@else if(antonimos === true){
+<div id='render-more'>
+    <!-- Loop @for: Itera sobre el array de palabras -->
+    @for(palabra of arrayPalabra; track palabra) {
+    <div class="word">
+        <!-- .join(', '): Une los antónimos con coma y espacio -->
+        <p>{{palabra.antonimos.join(', ')}}</p>  <!-- Muestra todos los antónimos -->
+    </div>
+    }
+    <!-- Botones de navegación -->
+    <button (click)="ocultar()">Volver</button>              <!-- Volver a botones principales -->
+    <button (click)="enviarBoolean()">Nueva búsqueda</button> <!-- Volver al formulario -->
+</div>
+}

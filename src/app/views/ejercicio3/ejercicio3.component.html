@@ -1,0 +1,28 @@
+    <!-- EJERCICIO 3  -->
+    <div id="page">
+        <section>
+            <div id='render-more'>
+                <button (click)="getRick(this.page)">PERSONAJES</button>
+                <button (click)="episodios()">EPISODIOS</button>
+            </div>
+
+
+            @if(episodes === false){
+                 <app-carrusel [personajes]="personajes" [episodes]="episodes"></app-carrusel>
+                   <div id='render-more'>
+        <button (click)="prevPagina()">ANTERIORES</button>
+        <button (click)="nextPagina()">SIGUIENTES</button>
+    </div>
+            }@else if (episodes === true) {
+                <app-carrusel [listaEpisodios]="listaEpisodios" [episodes]="episodes"></app-carrusel>
+                  <div id='render-more'>
+        <button (click)="prevPaginaEpisodios()">ANTERIORES</button>
+        <button (click)="nextPaginaEpisodios()">SIGUIENTES</button>
+    </div>
+            }
+
+      
+
+
+        </section>
+    </div>

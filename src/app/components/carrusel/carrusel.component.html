@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="grid">
+        <!-- CAROUSEL -->
+        <div class="card">
+            @if(personajes[contadorPersonajes] && episodes === false) {
+                <div [style]="{ 'background-image': 'url(' + personajes[this.contadorPersonajes].fotos[0] + ')' }" class='photo'>
+                </div>
+                <div class="footer">
+                    <div class="titles">
+                        <h2 class='card-title'>{{ personajes[this.contadorPersonajes].name }}</h2>
+                    </div>
+                </div>
+                <div id='render-more'>
+                    <button (click)="menosUno()">ANTERIOR</button>
+                    <button (click)="masUno()">SIGUIENTE</button>
+                </div>
+            } @else if(episodes === true){
+               <div [style]="{ 'background-image': 'url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png)' }" class='photo'>
+                </div>
+                <div class="footer">
+                    <div class="titles">
+                        <h2 class='card-title'>{{ listaEpisodios[this.contadorEpisodios].name }}</h2>
+                    </div>
+                </div>
+                <div id='render-more'>
+                    <button (click)="menosUnoEpisodios()">ANTERIOR</button>
+                    <button (click)="masUnoEpisodios()">SIGUIENTE</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

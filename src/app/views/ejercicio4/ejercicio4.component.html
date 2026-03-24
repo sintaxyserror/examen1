@@ -1,0 +1,44 @@
+ <!-- === EJERCICIO 4: DICCIONARIO DE PALABRAS === -->
+
+ <!-- === VISTA CONDICIONAL: FORMULARIO vs RESULTADOS === -->
+ <!-- Si enviar === false, muestra el formulario de búsqueda -->
+ @if(enviar === false){
+        <section>
+            <!-- === FORMULARIO REACTIVO === -->
+            <!-- (ngSubmit): Se ejecuta cuando se envía el formulario -->
+            <!-- [formGroup]: Vincula el formulario con reactiveForm -->
+            <form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm" method="post">
+                <div class="answer-bank">
+                    <div class="answer">
+                        <!-- === INPUT DE BÚSQUEDA === -->
+                        <!-- [formControlName]: Vincula el input con el control 'name' del FormGroup -->
+                        <input type="text" name="name" id="name" value="nombre" placeholder="nombre" [formControlName]="'name'"/>
+                    </div>
+                    <div class="answer">
+                        <!-- === BOTÓN DE ENVÍO === -->
+                        <!-- type="submit": Dispara el evento ngSubmit del formulario -->
+                        <input type="submit" value="Enviar" class="primary" />
+                    </div>
+                </div>
+            </form>
+        </section>
+    }
+    <!-- Si enviar === true, muestra el componente de resultados -->
+    @else {        <section>
+            <!-- === COMPONENTE HIJO: TEXT === -->
+            <!-- Componente que muestra los resultados de la búsqueda -->
+            <!-- (volverEvent): OUTPUT - Evento para volver al formulario -->
+            <!-- [arrayPalabra]: INPUT - Datos de la palabra buscada -->
+            <!-- [enviar]: INPUT - Estado de control de vista -->
+            <app-text 
+                (volverEvent)="onBack($event)"
+                [arrayPalabra]="arrayPalabra"
+                [enviar]="enviar">
+            </app-text>
+        </section>
+    }
+
+
+
+
+
