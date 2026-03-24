@@ -73,9 +73,6 @@ ng build
 
 # Ejecutar pruebas unitarias
 ng test
-
-# Linting del código
-ng lint
 ```
 
 ## 💡 Características por Ejercicio
