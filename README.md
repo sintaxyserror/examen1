@@ -1,59 +1,97 @@
-# Examen1
+# 🚀 Examen 1 - Aplicación Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+Una aplicación web moderna construida con **Angular 19** que integra múltiples APIs externas para proporcionar una experiencia interactiva y envolvente.
 
-## Development server
+## ✨ Características Principales
 
-To start a local development server, run:
+- 🎠 **Carrusel interactivo** - Visualización dinámica de contenido
+- 🎤 **Rick and Morty API** - Acceso a datos de personajes y episodios
+- 🔥 **Pokémon API** - Integración con base de datos de Pokémon
+- 🎨 **Interfaz moderna** - Diseño limpio y responsivo
+- 📱 **Componentes reutilizables** - Arquitectura modular y escalable
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Angular 19** - Framework web moderno
+- **TypeScript** - Lenguaje tipado
+- **CSS3** - Estilos avanzados
+- **RxJS** - Manejo de observables
+- **APIs REST** - Integración con servicios externos
+
+## 📦 Requisitos Previos
+
+- Node.js (v18 o superior)
+- npm (v9 o superior)
+- Angular CLI instalado globalmente
+
+## 🚀 Instalación
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/sintaxyserror/examen1.git
+cd examen1
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Accede a la aplicación en: `http://localhost:4200/`
 
-## Code scaffolding
+## 📁 Estructura del Proyecto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+src/
+├── app/
+│   ├── components/           # Componentes reutilizables
+│   │   ├── carrusel/        # Carrusel interactivo
+│   │   ├── header/          # Encabezado
+│   │   ├── photo/           # Galería de fotos
+│   │   ├── pokemon/         # Componente Pokémon
+│   │   └── text/            # Componente de texto
+│   ├── views/               # Vistas principales
+│   │   ├── ejercicio2/
+│   │   ├── ejercicio3/
+│   │   └── ejercicio4/
+│   ├── services/            # Servicios (APIs)
+│   ├── models/              # Interfaces TypeScript
+│   └── app.routes.ts        # Configuración de rutas
+├── public/                  # Archivos estáticos
+└── styles.css              # Estilos globales
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚦 Scripts Disponibles
 
 ```bash
-ng generate --help
-```
+# Servidor de desarrollo
+ng serve
 
-## Building
-
-To build the project run:
-
-```bash
+# Compilar para producción
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Ejecutar pruebas unitarias
 ng test
+
+# Linting del código
+ng lint
 ```
 
-## Running end-to-end tests
+## 💡 Características por Ejercicio
 
-For end-to-end (e2e) testing, run:
+- **Ejercicio 2** - Integración con Rick and Morty API
+- **Ejercicio 3** - Consumo de Pokémon API
+- **Ejercicio 4** - Componentes avanzados y carrusel dinámico
 
-```bash
-ng e2e
-```
+## 🤝 Contribuciones
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Las contribuciones son bienvenidas. Para cambios importantes, abre un issue primero para discutir qué te gustaría cambiar.
 
-## Additional Resources
+## 📄 Licencia
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto está bajo la licencia MIT.
+
+---
+
+**Desarrollado con ❤️ usando Angular 19** | [Ver repositorio](https://github.com/sintaxyserror/examen1)
